@@ -23,6 +23,26 @@ function gameloop() {
 }
 
 function gamedrow (){
-    context.fillstyle="rgb(180,250,213)";
-    context.fillrect(0,0 , screenheight, screenheight);
+    context.fillStyle="rgb(180,250,213)";
+    context.fillRect(0,0 , screenheight, screenheight);
+    
+    
+}
+
+function snakeinitialize() {
+    snake = [];
+    snakelength = 5;
+    snakesize = 20;
+  
+    for(var index = 0; index < snakelength; index++) {
+        
+    }
+} 
+
+function snakedraw() {
+     
+}
+
+function  snakeupdate() {
+    
 }
