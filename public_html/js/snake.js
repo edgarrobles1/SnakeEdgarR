@@ -23,7 +23,7 @@ function gameloop() {
 }
 
 function gamedrow (){
-    context.fillStyle="rgb(180,250,213)";
+    context.fillStyle= "rgb(180,250,213)";
     context.fillRect(0,0 , screenheight, screenheight);
     
     
@@ -35,12 +35,19 @@ function snakeinitialize() {
     snakesize = 20;
   
     for(var index = 0; index < snakelength; index++) {
+        snake.push({
+            x:index,
+            y: 0
+        });
         
     }
 } 
 
 function snakedraw() {
-     
+    for(var index = 0; index  < snake.length; index++) {
+        context.fillStyle = "white";
+        context.fillRect(snake[index].x * snakesize, snake[index].y * snakeside, snakeside, snakeside);
+    }
 }
 
 function  snakeupdate() {
