@@ -1,11 +1,14 @@
 var snake;
+var snakelength;
+var snakesize;
 
 var context;
 var screenwith;
 var screenheight;
 
-
-
+gameinitialize();
+snakeinitialize();
+setinterval(gameloop, 1000/30);
 
 function gameinitialize() {
    var canvas = document .getelementbyid("game-sreen"); 
@@ -19,14 +22,14 @@ function gameinitialize() {
 }
 
 function gameloop() {
-    
+     gamedraw();
+     snakeupdate();
+     snakedraw();
 }
 
-function gamedrow (){
+function gamedraw (){
     context.fillStyle= "rgb(180,250,213)";
     context.fillRect(0,0 , screenheight, screenheight);
-    
-    
 }
 
 function snakeinitialize() {
