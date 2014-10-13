@@ -2,6 +2,8 @@ var snake;
 var snakelength;
 var snakesize;
 
+var food;
+
 var context;
 var screenwith;
 var screenheight;
@@ -54,5 +56,6 @@ function snakedraw() {
 }
 
 function  snakeupdate() {
-    
+ var snakeheadx = snake[0].x;
+ var snakeheady = snake[0].y;
 }
