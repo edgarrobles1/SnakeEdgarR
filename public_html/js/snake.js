@@ -56,6 +56,24 @@ function snakedraw() {
 }
 
 function  snakeupdate() {
- var snakeheadx = snake[0].x;
- var snakeheady = snake[0].y;
+    var snakeheadx = snake[0].x;
+    var snakeheady = snake[0].y;
+ 
+   snakeheadx++;
+ 
+   var snaktail = snake.pop();
+   snaktail.x = snkeheadx;
+   snaketail.y = snkeheady;
+   snake.unshift(snaketail);
 }
+
+function foodinitialize() {
+    food = {
+       x: 0,
+       Y: 0
+    };
+
+ function fooddraw () {
+     context.fillStyle = "white";
+     context.fillRect(food.x, food.y, snakesize);
+    }
