@@ -76,4 +76,4 @@ function foodinitialize() {
  function fooddraw () {
      context.fillStyle = "white";
      context.fillRect(food.x, food.y, snakesize);
-    }
+ } 
