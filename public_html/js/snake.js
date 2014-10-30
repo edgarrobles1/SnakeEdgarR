@@ -1,3 +1,8 @@
+/* ---------------------------------------------------------------------------
+ * Variables
+ * 
+ */
+
 var snake;
 var snakelength;
 var snakesize;
@@ -8,9 +13,20 @@ var context;
 var screenwidth;
 var screenheight;
 
+/* ---------------------------------------------------------------------------
+ * executing game code
+ *  --------------------------------------------------------------------------
+ */
+
 gameinitialize();
 snakeinitialize();
-setInterval(gameLoop, 100/30);
+foodinitialize();
+setInterval(gameLoop, 1000/30);
+
+/*---------------------------------------------------------------------------
+ * game functions
+ * --------------------------------------------------------------------------
+ */
 
 function gameinitialize() {
    var canvas = document.getElementById("game-screen"); 
@@ -27,16 +43,21 @@ function gameLoop() {
      gamedraw();
      snakeupdate();
      snakedraw();
+     fooddraw();
 }
 
 function gamedraw (){
     context.fillStyle= "red";
     context.fillRect(0,0 , screenwidth, screenheight);
 }
+/* ---------------------------------------------------------------------------
+ * snake functions
+ * ---------------------------------------------------------------------------
+ */
 
 function snakeinitialize() {
     snake = [];
-    snakelength = 10;
+    snakelength = 5;
     snakesize = 20;
   
     for(var index = 0; index < snakelength; index++) {
@@ -50,7 +71,7 @@ function snakeinitialize() {
  
 function snakedraw() {
     for(var index = 0; index  < snake.length; index++) {
-        context.fillStyle = "blue";
+        context.fillStyle = "white";
         context.fillRect(snake[index].x * snakesize, snake[index].y * snakesize, snakesize, snakesize);
     }
 }
@@ -66,15 +87,23 @@ function  snakeupdate() {
    snaketail.y = snakeheady;
    snake.unshift(snaketail);
 }
+/* ---------------------------------------------------------------------------
+ * food functions
+ * ---------------------------------------------------------------------------
+ */
 
 function foodinitialize() {
     food = {
        x: 0,
-       Y: 0
+       y: 0
     };
 }
 
  function fooddraw () {
      context.fillStyle = "white";
-     context.fillRect(food.x, food.y, snakesize);
+     context.fillRect(food.x, food.y, snakesize, snakesize);
+     
+     food.x = randomX;
+     food.y = randomY;
  }
+ 
