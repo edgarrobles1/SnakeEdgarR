@@ -1,6 +1,6 @@
 /* ---------------------------------------------------------------------------
  * Variables
- * 
+ * ---------------------------------------------------------------------------
  */
 
 var snake;
@@ -32,8 +32,8 @@ function gameinitialize() {
    var canvas = document.getElementById("game-screen"); 
    context = canvas.getContext("2d");
    
-   screenwidth = window.innerWidth;
-   screenheight = window.innerHeight;
+   screenWidth = window.innerwidth;
+   screenheight = window.innerheight;
    
    canvas.width = screenwidth;
    canvas.height= screenheight;
@@ -103,7 +103,15 @@ function foodinitialize() {
      context.fillStyle = "white";
      context.fillRect(food.x, food.y, snakesize, snakesize);
      
-     food.x = randomX;
-     food.y = randomY;
+     
+ }
+ 
+     function setfoodposition(){
+     var randomx = Math.floor(Math.random() * screenwidth);
+     var randomy = Math.floor(Math.random() * screenheight);
+     
+     food.x = randomx;
+     food.y = randomy; 
+     
  }
  
