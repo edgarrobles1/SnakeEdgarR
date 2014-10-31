@@ -12,6 +12,7 @@ var food;
 var context;
 var screenwidth;
 var screenheight;
+var snakeDirection;
 
 /* ---------------------------------------------------------------------------
  * executing game code
@@ -32,14 +33,15 @@ function gameinitialize() {
    var canvas = document.getElementById("game-screen"); 
    context = canvas.getContext("2d");
    
-   screenWidth = window.innerwidth;
-   screenheight = window.innerheight;
+   screenWidth = window.innerWidth;
+   screenHeight = window.innerHeight;
    
-   canvas.width = screenwidth;
-   canvas.height= screenheight;
+   canvas.width = screenWidth;
+   canvas.height= screenHeight;
 }
 
 function gameLoop() {
+    console.log("gameloop");
      gamedraw();
      snakeupdate();
      snakedraw();
@@ -47,8 +49,9 @@ function gameLoop() {
 }
 
 function gamedraw (){
+    console.log("gamedraw");
     context.fillStyle= "red";
-    context.fillRect(0,0 , screenwidth, screenheight);
+    context.fillRect(0,0 , screenWidth, screenHeight);
 }
 /* ---------------------------------------------------------------------------
  * snake functions
@@ -59,6 +62,7 @@ function snakeinitialize() {
     snake = [];
     snakelength = 5;
     snakesize = 20;
+    snakeDirection = "right";
   
     for(var index = 0; index < snakelength; index++) {
         snake.push({
@@ -79,8 +83,12 @@ function snakedraw() {
 function  snakeupdate() {
     var snakeheadx = snake[0].x;
     var snakeheady = snake[0].y;
+    
+    if() {
+        
+    }
  
-   snakeheadx++;
+   snakeheady++;
  
    var snaketail = snake.pop();
    snaketail.x = snakeheadx;
@@ -107,7 +115,7 @@ function foodinitialize() {
  }
  
      function setfoodposition(){
-     var randomx = Math.floor(Math.random() * screenwidth);
+     var randomx = Math.floor(Math.random(mix. min) * screenwidth);
      var randomy = Math.floor(Math.random() * screenheight);
      
      food.x = randomx;
