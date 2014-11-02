@@ -74,7 +74,7 @@ function snakeinitialize() {
 }
  
 function snakedraw() {
-    for(var index = 0; index  < snake.length; index++) {
+    for(var index = 0; index < snake.length; index++) {
         context.fillStyle = "white";
         context.fillRect(snake[index].x * snakesize, snake[index].y * snakesize, snakesize, snakesize);
     }
@@ -84,17 +84,15 @@ function  snakeupdate() {
     var snakeheadx = snake[0].x;
     var snakeheady = snake[0].y;
     
-    if() {
-        
-    }
- 
    snakeheady++;
  
    var snaketail = snake.pop();
    snaketail.x = snakeheadx;
    snaketail.y = snakeheady;
    snake.unshift(snaketail);
-}
+    }
+
+
 /* ---------------------------------------------------------------------------
  * food functions
  * ---------------------------------------------------------------------------
